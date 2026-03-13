@@ -1,16 +1,18 @@
 package cesde;
 
-import cesde.domain.Student;
+import cesde.config.Config;
 import cesde.userinterface.MenuApp;
-import cesde.view.StudentView;
-
-import java.awt.*;
 
 public class Main {
 
 
+
+
+
     public static void main(String[] args) {
 
+        MenuApp menuApp = Config.createMenuApp();
+        menuApp.mainMenu();
 
     }
 
