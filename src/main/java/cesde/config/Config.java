@@ -10,10 +10,10 @@ public class Config {
 
     public static MenuApp createMenuApp() {
 
-        Student student = new Student();
+
         StudentRepository studentRepository = new StudentRepository();
-        StudentServiceImpl studentServiceImpl = new StudentServiceImpl(student, studentRepository);
-        StudentView studentView = new StudentView(student, studentServiceImpl);
+        StudentServiceImpl studentServiceImpl = new StudentServiceImpl( studentRepository);
+        StudentView studentView = new StudentView(studentServiceImpl);
 
         return new MenuApp(studentView);
     }

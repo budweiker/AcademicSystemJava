@@ -14,17 +14,19 @@ public class StudentServiceImpl implements StudentService {
 
     // Voy a crear una instancia unica de Student
 
-    private final Student student;
+
     private final StudentRepository studentRepository;
 
-    public StudentServiceImpl(Student student, StudentRepository studentRepository){
+    public StudentServiceImpl( StudentRepository studentRepository){
 
-        this.student = student;
         this.studentRepository= studentRepository;// Esto es una inyeccion de dependencias
     }
 
     @Override
     public Student createStudentService(){
+
+
+        Student student = new Student();
 
         System.out.println("Ingrese el id del Estudiente");
         int id = sc.nextInt();
@@ -64,25 +66,25 @@ public class StudentServiceImpl implements StudentService {
                 System.out.println("Actualizar id");
                 int id = sc.nextInt();
                 sc.nextLine();
-                student.setId(id);
+                //student.setId(id);
                 break;
             case 2:
                 System.out.println("Actualizar Nombre");
                 String name = sc.nextLine();
-                student.setName(name);
+                //student.setName(name);
                 break;
             default:
                 System.out.println("Seleccione una opción valida");
         }
 
 
-        return student;
+        return null;
     }
 
     @Override
     public Optional<Student> getStudentById(int id) {
 
-        if (id == student.getId()) {
+        /*if (id == student.getId()) {
             System.out.println("id:" + student.getId() + "\n" +
                     "Nombre:" + student.getName() + "\n" +
                     "Apellido " + student.getLastName() + "\n" +
@@ -90,9 +92,9 @@ public class StudentServiceImpl implements StudentService {
                     "Status: " + student.isStatus());
         } else {
             System.out.println("Id no encontrado");
-        }
+        }*/
 
-        return Optional.ofNullable(student);
+        return Optional.ofNullable(null);
     }
 
     @Override

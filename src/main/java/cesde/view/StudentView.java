@@ -10,11 +10,11 @@ public class StudentView {
 
     Scanner sc = new Scanner(System.in);
 
-    private final Student student;
+
     private final StudentServiceImpl studentServiceImpl;
 
-    public StudentView(Student student, StudentServiceImpl studentServiceImpl){
-        this.student = student;
+    public StudentView(StudentServiceImpl studentServiceImpl){
+
         this.studentServiceImpl = studentServiceImpl; // Esto es inyeccion de dependencias
     }
 
